@@ -1,0 +1,68 @@
+---
+title: The Assessment Flow
+description: How SkillThis evaluates your input before generating a skill
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+Before generating your skill, SkillThis runs a quick assessment of your input to determine how much methodology it contains. This takes a few seconds and decides whether to generate immediately or ask follow-up questions first.
+
+## How It Works
+
+When you submit your expertise description, the AI evaluates it on **methodology specificity** and assigns a score from 0 to 100.
+
+| Score Range | What It Means | What Happens |
+|---|---|---|
+| 60-100 | Input has enough concrete methodology | Proceeds directly to skill generation |
+| 0-59 | Input needs more detail | Triggers [extraction questions](/creating/extraction) |
+
+## What the Assessment Evaluates
+
+The assessment looks for five things:
+
+1. **Step-by-step processes** - "First I do X, then Y"
+2. **Named tools and frameworks** - Specific software, methodologies, or techniques
+3. **Clear input/output examples** - What goes in, what comes out
+4. **Quantifiable outcomes** - Numbers, metrics, timelines
+5. **Decision trees or conditional workflows** - "If X, then Y; otherwise Z"
+
+## The Flow
+
+```
+Input submitted
+    │
+    ▼
+Assessment (score 0-100)
+    │
+    ├── Score ≥ 60 ──→ Generate skill directly
+    │
+    └── Score < 60 ──→ Extraction questions (3 questions)
+                            │
+                            ├── Answer all 3 ──→ Generate with enriched context
+                            │
+                            └── Skip ──→ Generate with original input
+```
+
+## What You See
+
+When the assessment runs, you'll see a brief loading state. If your input scores below 60, the assessment also returns:
+
+- **Reasoning** - A 1-2 sentence explanation of why your input needs more detail
+- **Missing elements** - Specific suggestions for what would improve your input
+
+This reasoning is displayed at the top of the extraction questions screen so you understand what's needed.
+
+<Aside type="tip">
+  If you already have a detailed description ready, you can skip extraction questions and generate directly. The skip option is always available.
+</Aside>
+
+## Assessment vs. Generation
+
+The assessment and generation use different AI models for different purposes:
+
+| Step | Purpose | Speed |
+|---|---|---|
+| Assessment | Quick check of input quality | Fast (1-2 seconds) |
+| Generation | Create and grade the full skill | Slower (10-20 seconds) |
+
+The assessment is intentionally fast so you get feedback quickly. If your input is good enough, you skip straight to generation with no delay.

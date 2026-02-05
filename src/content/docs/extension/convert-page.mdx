@@ -1,0 +1,68 @@
+---
+title: Convert a Page
+description: Generate a skill from an entire webpage
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+
+## How It Works
+
+<Steps>
+
+1. **Navigate to a webpage** with content you want to turn into a skill
+
+2. **Click the SkillThis extension icon** in your Chrome toolbar
+
+   A popup appears showing the current page title and URL.
+
+3. **Click "Convert to Skill"**
+
+   The extension extracts the page content and sends it to SkillThis for skill generation.
+
+4. **Wait for generation**
+
+   The toolbar icon shows a spinner animation and elapsed time badge. You can close the popup and continue browsing. Generation runs in the background.
+
+5. **View your skill**
+
+   When complete, a new tab opens with your generated skill on skillthis.ai, including the grade and full skill content.
+
+</Steps>
+
+## Content Extraction
+
+The extension intelligently extracts the main content from the page:
+
+1. Looks for content in common containers: `<article>`, `<main>`, `[role="main"]`, `.post-content`, `.article-content`, `.entry-content`
+2. Falls back to `<body>` if no specific content area is found
+3. Removes non-content elements: navigation, headers, footers, sidebars, ads, comments, social sharing widgets
+4. Prepends the page title for additional context
+5. Truncates at 15,000 characters to stay within API limits
+
+<Aside type="caution">
+  Pages with very little text content (under 50 characters after extraction) will show an error: "Could not extract enough content from this page." Try a different page or use the [selection method](/extension/convert-selection) instead.
+</Aside>
+
+## Background Generation
+
+When you click "Convert to Skill," the generation is delegated to the extension's background service worker. This means:
+
+- You can **close the popup** after clicking the button
+- You can **continue browsing** while the skill generates
+- The result **opens in a new tab** automatically when ready
+- If generation fails, you'll see a **Chrome notification** with the error message
+
+## Best Pages to Convert
+
+The extension works best with:
+
+- Blog posts and articles with structured content
+- Documentation pages with processes and methodologies
+- Tutorials with step-by-step instructions
+- Professional guides with specific tools and frameworks
+
+It works less well with:
+
+- Pages with minimal text (image-heavy, video-only)
+- Single-page applications where content is dynamically loaded
+- Pages behind authentication (the extension can only access what's visible)

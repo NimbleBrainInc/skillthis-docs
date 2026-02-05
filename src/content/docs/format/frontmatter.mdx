@@ -1,0 +1,118 @@
+---
+title: YAML Frontmatter
+description: Reference for the name and description fields in skill frontmatter
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+The YAML frontmatter sits between `---` markers at the very top of the skill file. It contains two required fields: `name` and `description`.
+
+```yaml
+---
+name: analyzing-sales-data
+description: Analyzes sales pipeline data and generates forecasts. Use when reviewing quarterly numbers, building projections, or identifying pipeline risks.
+---
+```
+
+## The `name` Field
+
+### Rules
+
+| Rule | Requirement |
+|---|---|
+| Format | Kebab-case (lowercase letters, numbers, hyphens only) |
+| Style | Gerund form preferred (verb ending in -ing) |
+| Length | Maximum 64 characters |
+| Pattern | Must match `^[a-z][a-z0-9-]*$` |
+
+### Good Names
+
+```
+recruiting-engineering-talent
+analyzing-sales-data
+reviewing-code-security
+writing-technical-docs
+managing-infrastructure
+processing-customer-feedback
+```
+
+### Bad Names
+
+| Name | Problem |
+|---|---|
+| `helper` | Too vague |
+| `MySkill` | Not kebab-case |
+| `code_review` | Underscores, not a gerund |
+| `data` | Too generic |
+| `the-ultimate-sales-methodology-v2` | Unnecessarily long |
+
+<Aside type="tip">
+  Think of the name as a filename. It should tell you what the skill does at a glance: `reviewing-pull-requests`, `writing-api-specs`, `debugging-performance`.
+</Aside>
+
+## The `description` Field
+
+### Rules
+
+| Rule | Requirement |
+|---|---|
+| Person | Must be third person |
+| Content | What it does AND when to use it |
+| Length | Maximum 1,024 characters |
+
+### Why Third Person?
+
+The description gets injected into AI system prompts. First or second person creates confusion about who is speaking.
+
+**Good (third person):**
+```yaml
+description: Analyzes sales pipeline data and generates forecasts. Use when reviewing quarterly numbers, building projections, or identifying pipeline risks.
+```
+
+**Bad (first person):**
+```yaml
+description: I analyze sales data and help you build forecasts.
+```
+
+**Bad (second person):**
+```yaml
+description: You can use this to analyze your sales pipeline data.
+```
+
+### Include Trigger Phrases
+
+The description should tell AI assistants when to activate the skill. Include "Use when..." followed by specific scenarios.
+
+```yaml
+description: Reviews code for security vulnerabilities and performance issues. Use when reviewing pull requests, auditing codebases, or checking for OWASP Top 10 vulnerabilities.
+```
+
+This helps the AI match user requests to the right skill.
+
+### Description Pattern
+
+Follow this pattern: **[What it does]. Use when [specific triggers].**
+
+```yaml
+# Pattern
+description: [Verb]s [object] [how/with what]. Use when [trigger 1], [trigger 2], or [trigger 3].
+
+# Examples
+description: Writes technical documentation following the Divio framework. Use when creating API docs, writing tutorials, or structuring reference guides.
+
+description: Manages Kubernetes deployments with rollback safety. Use when deploying to production, scaling services, or troubleshooting pod failures.
+
+description: Conducts structured code reviews focusing on bugs and security. Use when reviewing pull requests, auditing code, or checking for vulnerabilities.
+```
+
+## Grading Impact
+
+Frontmatter issues directly affect your grade under the **Format Compliance** criterion (15% of total score):
+
+| Issue | Penalty |
+|---|---|
+| First/second person in description | -10 points |
+| Missing trigger phrases | Score reduced |
+| Name not in gerund form | Minor deduction |
+| Name not kebab-case | Major deduction |
+| Missing frontmatter entirely | Fails format compliance |

@@ -1,0 +1,94 @@
+---
+title: Extraction Questions
+description: Guided questions that help capture your methodology when your input needs more detail
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+When your input scores below 60 on the [assessment](/creating/assessment), SkillThis presents three targeted questions to capture the concrete details that make a skill effective.
+
+## The Three Questions
+
+### Question 1: Your Process
+
+> **Walk me through your step-by-step process.**
+> *What do you do first, second, third when working on this?*
+
+This captures the sequential workflow that forms the backbone of your skill.
+
+**Example answer:**
+```
+First I analyze the requirements, then I research comparable
+solutions, next I create an initial draft with placeholder
+content, review it against our style guide, iterate based on
+stakeholder feedback, and finalize with a quality check.
+```
+
+### Question 2: Your Tools
+
+> **What specific tools, frameworks, or techniques do you use?**
+> *Name the actual things you work with.*
+
+This captures the named tools and frameworks that make your methodology concrete and actionable.
+
+**Example answer:**
+```
+I use the MATCH framework for screening, LinkedIn Recruiter for
+sourcing, and Greenhouse for tracking. For boolean searches I use
+specific operators like (AND, OR, NOT) combined with site-specific
+search. I track all interactions in a custom Notion database.
+```
+
+### Question 3: A Real Example
+
+> **Describe a real example: input, process, output.**
+> *Walk through an actual case from start to finish.*
+
+This gives the AI a concrete case study to model the skill's examples section after.
+
+**Example answer:**
+```
+A startup needed a senior engineer. I sourced 50 candidates through
+LinkedIn and GitHub, screened 15 using MATCH criteria, and presented
+5 to the hiring manager. After 3 rounds of interviews, we made 2
+offers and one accepted. The hire started in 6 weeks from kickoff.
+```
+
+## Requirements
+
+- Each answer must be at least **30 characters** long
+- You can navigate back and forth between questions
+- Progress is shown with a step indicator (Question 1 of 3, etc.)
+
+## Skipping Extraction
+
+You can skip the extraction flow entirely using the **Skip** button. If you skip:
+
+- Your original input is used as-is for skill generation
+- The skill will likely receive a lower grade since the input lacks detail
+- You can always try again with a more detailed input
+
+<Aside type="tip">
+  Taking 2-3 minutes to answer the extraction questions almost always results in a significantly better skill. The questions are designed to pull out exactly what the AI needs.
+</Aside>
+
+## How Answers Are Used
+
+Your three answers are combined with your original input into an enriched context:
+
+```
+[Your original input]
+
+## Additional Context
+
+### Step-by-Step Process
+[Your answer to question 1]
+
+### Tools & Techniques
+[Your answer to question 2]
+
+### Real Example
+[Your answer to question 3]
+```
+
+This enriched context is then sent to the skill generator, which has much more material to work with than the original input alone.

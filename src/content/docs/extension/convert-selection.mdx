@@ -1,0 +1,61 @@
+---
+title: Convert a Selection
+description: Generate a skill from selected text on any webpage
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+
+## How It Works
+
+<Steps>
+
+1. **Select text on any webpage**
+
+   Highlight the text you want to turn into a skill. This could be a section of an article, a methodology description, or any content describing a process.
+
+2. **Right-click the selection**
+
+3. **Click "Generate Skill from Selection"**
+
+   The context menu option appears when you have text selected.
+
+4. **Wait for generation**
+
+   The toolbar icon shows a spinner and elapsed time. Generation runs in the background.
+
+5. **View your skill**
+
+   A new tab opens with your generated skill on skillthis.ai.
+
+</Steps>
+
+## Requirements
+
+- **Minimum 20 characters** of selected text is required
+- If the selection is too short, you'll see a notification: "Please select more text to generate a skill"
+
+<Aside type="tip">
+  Select the most methodology-rich text you can find. Paragraphs describing specific processes, tools, and examples will produce much better skills than generic introductory text.
+</Aside>
+
+## One at a Time
+
+Only one skill can generate at a time. If you try to generate from a selection while another generation is in progress, you'll see a notification: "Already generating a skill. Please wait."
+
+## Selection vs. Full Page
+
+| Method | Best For |
+|---|---|
+| **Full page** (popup button) | Blog posts, articles, documentation where the whole page is relevant |
+| **Selection** (right-click menu) | Extracting specific sections, cherry-picking the best content, pages with mixed content |
+
+The selection method gives you more control over what goes into the skill. If a page has great methodology buried in a longer article, select just that section.
+
+## How the Source Is Tracked
+
+When generating from a selection, SkillThis records:
+- The **selected text** as the expertise input
+- The **page URL** as the source
+- The **page title** for reference
+
+This context appears on the skill's share page.

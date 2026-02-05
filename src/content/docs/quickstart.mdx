@@ -1,0 +1,66 @@
+---
+title: Quickstart
+description: Create your first AI skill in 2 minutes
+---
+
+import { Steps, Aside, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+## Create Your First Skill
+
+<Steps>
+
+1. **Go to [skillthis.ai](https://skillthis.ai)**
+
+2. **Describe your expertise**
+
+   Write at least 50 characters describing what you do and how you do it. The more specific, the better your grade.
+
+   ```
+   I'm a technical recruiter specializing in engineering roles at
+   early-stage startups. My process: I source candidates through
+   LinkedIn boolean searches and GitHub activity, screen them with
+   my MATCH framework (Motivation, Aptitude, Technical depth,
+   Culture fit, Hunger), then guide them through the full interview
+   loop. I always prep candidates before each round and debrief
+   hiring managers after.
+   ```
+
+3. **Answer extraction questions (if prompted)**
+
+   If your input needs more detail, you'll see 3 quick questions about your process, tools, and a real example. These help the AI capture your actual methodology.
+
+4. **Review your graded skill**
+
+   You'll see your generated skill with a letter grade (A+ through F) and specific improvement suggestions.
+
+5. **Copy and deploy**
+
+   Use the copy button to grab your skill, then paste it into ChatGPT, Claude, or your IDE.
+
+</Steps>
+
+<Aside>
+  The more concrete your input (specific processes, named tools, real examples), the higher your grade. See [Writing Great Inputs](/creating/writing-inputs) for detailed guidance.
+</Aside>
+
+## What You'll Get
+
+A skill file that looks like this:
+
+```yaml
+---
+name: recruiting-engineering-talent
+description: Screens and evaluates engineering candidates using the MATCH framework. Use when sourcing, screening, or evaluating technical candidates for startup roles.
+---
+```
+
+Followed by structured markdown with Quick Start, Workflow, Examples, Best Practices, and Common Pitfalls sections.
+
+## Next Steps
+
+<CardGrid>
+  <LinkCard title="Writing Great Inputs" description="Learn what makes a high-scoring input" href="/creating/writing-inputs" />
+  <LinkCard title="Understanding Grades" description="How the A+ through F grading works" href="/creating/grading" />
+  <LinkCard title="Deploy to Claude" description="Use your skill with Claude Projects" href="/deploy/claude" />
+  <LinkCard title="Chrome Extension" description="Generate skills from any webpage" href="/extension/install" />
+</CardGrid>

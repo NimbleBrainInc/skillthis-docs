@@ -1,0 +1,113 @@
+---
+title: Writing Great Inputs
+description: How to write expertise descriptions that produce high-quality skills
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+The quality of your generated skill depends directly on the quality of your input. SkillThis assesses your input on methodology specificity, scoring it from 0 to 100.
+
+## What Makes a High-Scoring Input
+
+The AI evaluates your input for concrete, actionable methodology. Here's what it looks for:
+
+| Element | Example | Impact |
+|---------|---------|--------|
+| Step-by-step processes | "First I do X, then Y, then Z" | High |
+| Named tools and frameworks | "I use the MATCH framework, LinkedIn Recruiter" | High |
+| Decision trees | "If X happens, I do Y; otherwise Z" | High |
+| Quantifiable outcomes | "Screened 50, interviewed 15, placed 3" | High |
+| Clear input/output | "Given a job req, I produce a candidate shortlist" | Medium |
+| Domain-specific vocabulary | "Boolean searches", "RICE scoring", "runbooks" | Medium |
+
+## Scoring Tiers
+
+### High Score (70-100)
+
+Your input contains concrete methodology. Skills generated from these inputs typically grade B or higher.
+
+```
+I'm a technical recruiter specializing in engineering roles at
+early-stage startups. My process: I source candidates through
+LinkedIn boolean searches and GitHub activity, screen them with
+my MATCH framework (Motivation, Aptitude, Technical depth,
+Culture fit, Hunger), then guide them through the full interview
+loop. I always prep candidates before each round and debrief
+hiring managers after.
+```
+
+This scores high because it names specific tools (LinkedIn, GitHub), a named framework (MATCH), a clear process flow, and concrete actions.
+
+### Medium Score (40-70)
+
+Some methodology but incomplete. SkillThis will ask [extraction questions](/creating/extraction) to fill gaps.
+
+```
+Program manager focused on product launches. I coordinate
+engineering, design, marketing, and legal. I'm good at identifying
+dependencies early and keeping stakeholders aligned without
+endless meetings.
+```
+
+This mentions coordination and dependencies but lacks specific tools, frameworks, or step-by-step processes.
+
+### Low Score (0-40)
+
+Abstract or aspirational. SkillThis will prompt you for much more detail.
+
+```
+tech recruiter, 8 years exp. i source, screen, and close
+engineering candidates. good at passive outreach and salary
+negotiation.
+```
+
+This lists capabilities without explaining how. No tools, no process, no examples.
+
+## What to Include
+
+A strong input covers at least 3 of these:
+
+1. **Your process** - What do you do first, second, third?
+2. **Your tools** - What specific software, frameworks, or techniques do you use?
+3. **Your criteria** - How do you evaluate quality or make decisions?
+4. **A real example** - Walk through an actual case from start to finish
+5. **Your edge cases** - What do you do when things go wrong?
+
+## What to Avoid
+
+| Anti-Pattern | Example | Why It Fails |
+|---|---|---|
+| Vague goals | "I design revolutionary UIs" | No methodology |
+| Identity statements | "I'm a great engineer" | No process |
+| Lists without depth | "Python, JavaScript, React" | Tools without workflow |
+| Philosophy without action | "I believe in user-centered design" | Principles without steps |
+| Too short | "marketing" | Nothing to work with |
+
+<Aside>
+  The minimum input length is 50 characters, but most high-scoring inputs are 200+ characters. Think of it as describing your process to a smart colleague who needs to replicate your work.
+</Aside>
+
+## Side-by-Side Comparison
+
+### Sales Engineer
+
+**Brief input (low score):**
+```
+SE at a devtools company. I do demos, POCs, and help close
+technical deals. good at translating features into business value
+```
+
+**Detailed input (high score):**
+```
+I'm a sales engineer who runs technical demos and POCs for
+enterprise SaaS deals. My approach: I never demo features, I demo
+outcomes. Before any call I research the prospect's tech stack,
+identify their likely pain points, and build a custom demo
+environment that mirrors their setup. During the call I ask
+discovery questions first, then show only the 3-4 features that
+solve THEIR problems. I always leave time for hands-on exploration.
+Post-demo I send a personalized follow-up with a Loom walkthrough
+of their specific use case.
+```
+
+The detailed version names specific techniques (custom demo environments, discovery questions, Loom walkthroughs), describes a clear process (research, build, present, follow up), and includes decision criteria (only show features that solve their problems).

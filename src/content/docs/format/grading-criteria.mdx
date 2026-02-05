@@ -1,0 +1,118 @@
+---
+title: Grading Criteria
+description: The six weighted criteria used to grade every skill
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+SkillThis grades every skill on six criteria, each with a specific weight. The total score (0-100) maps to a letter grade from A+ to F.
+
+## The Six Criteria
+
+### 1. Format Compliance (15%)
+
+Does the skill have valid structure and metadata?
+
+| Check | Requirement |
+|---|---|
+| YAML frontmatter | Present with `name` and `description` fields |
+| Name format | Kebab-case, preferably gerund form |
+| Description person | Third person only (no "I", "You", "We") |
+| Description content | Includes what it does AND trigger phrases |
+
+**Critical deduction:** First or second person in description = -10 points.
+
+### 2. Conciseness (15%)
+
+Does the skill respect the AI's intelligence?
+
+The AI already knows what common concepts are. A skill about code review doesn't need to explain what a pull request is. A skill about data analysis doesn't need to define what SQL is.
+
+**Good (concise):**
+```markdown
+Use pdfplumber for text extraction:
+\`\`\`python
+import pdfplumber
+with pdfplumber.open("file.pdf") as pdf:
+    text = pdf.pages[0].extract_text()
+\`\`\`
+```
+
+**Bad (verbose):**
+```markdown
+PDF (Portable Document Format) files are a common file format
+that contains text, images, and other content. To extract text
+from a PDF, you'll need to use a library...
+```
+
+**Critical deduction:** Over-explaining basics = -10 points.
+
+### 3. Quick Start Quality (15%)
+
+Does the skill provide immediate value upfront?
+
+The Quick Start should be the first section after the frontmatter. It should contain a working example or a concise step-by-step that gets results immediately.
+
+**Critical deduction:** No Quick Start or immediate actionable content = -15 points.
+
+### 4. Workflow Quality (15%)
+
+Does the skill have a clear step-by-step process?
+
+Good workflows have:
+- Numbered steps in logical order
+- Clear decision points ("If X, then Y")
+- Checklists for complex multi-step processes
+- Specific actions, not vague guidance
+
+### 5. Examples Quality (20%)
+
+Does the skill show concrete input/output pairs?
+
+This is the most heavily weighted criterion. Examples must be concrete, not abstract. Each example should show:
+- A specific input
+- The process applied
+- The specific output
+
+**Critical deduction:** Abstract examples instead of concrete I/O pairs = -10 points.
+
+### 6. Completeness (20%)
+
+Does the skill cover edge cases and provide defaults?
+
+This criterion checks for:
+- Edge case handling
+- Common pitfalls section
+- Templates or frameworks where applicable
+- Defaults rather than many options (reduce decision fatigue)
+
+## Score Distribution
+
+<Aside>
+  Grading is deliberately harsh. Here's the expected distribution:
+</Aside>
+
+| Range | Frequency | What It Takes |
+|---|---|---|
+| 80-100 | Rare (~5%) | Exceptional: concrete examples, perfect format, actionable throughout |
+| 60-79 | Common (~30%) | Good: solid methodology with some gaps in examples or completeness |
+| 40-59 | Most common (~45%) | Average: has process but lacks concrete examples or over-explains |
+| 0-39 | Some (~20%) | Poor: vague input, placeholder content, no real methodology |
+
+## Critical Deductions Summary
+
+| Issue | Points Lost |
+|---|---|
+| First/second person in description | -10 |
+| No Quick Start section | -15 |
+| Abstract examples (not input/output pairs) | -10 |
+| Over-explaining basics the AI knows | -10 |
+| Placeholder content, no real methodology | Scores 0-20 (F) |
+
+## How to Maximize Your Score
+
+1. **Provide detailed input** - The generator can only work with what you give it
+2. **Include real examples** - Walk through actual cases with specific inputs and outputs
+3. **Name your tools** - "LinkedIn Recruiter" scores better than "recruiting tools"
+4. **Describe your process** - Sequential steps with decision criteria
+5. **Answer extraction questions** - If prompted, take the time to answer thoroughly

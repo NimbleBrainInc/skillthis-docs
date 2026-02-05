@@ -1,0 +1,86 @@
+---
+title: FAQ
+description: Frequently asked questions about SkillThis
+---
+
+## What is an AI skill?
+
+An AI skill is a structured prompt that gives AI assistants specialized capabilities. It includes a clear role definition, specific knowledge areas, step-by-step processes, and quality criteria that help AI perform specific professional tasks.
+
+Skills are written in markdown with YAML frontmatter that tells the AI when and how to apply the skill.
+
+## How does SkillThis work?
+
+Describe your professional expertise in plain text. SkillThis analyzes your input and transforms it into a structured skill format. The skill is graded on clarity, specificity, and usefulness. You can share your skill via a unique URL or copy it to use with any AI assistant.
+
+## Is SkillThis free to use?
+
+Yes. SkillThis is completely free. No account or payment is required. You can create unlimited skills and share them with anyone.
+
+## How is my skill graded?
+
+Skills are graded on a scale from A+ to F (0-100 points). The grade reflects how clear, specific, and actionable your skill is for an AI assistant. The grade is based on six weighted criteria:
+
+1. Format Compliance (15%)
+2. Conciseness (15%)
+3. Quick Start Quality (15%)
+4. Workflow Quality (15%)
+5. Examples Quality (20%)
+6. Completeness (20%)
+
+See [Grading Criteria](/format/grading-criteria) for the full breakdown.
+
+## How do I use my skill with an AI assistant?
+
+Copy your generated skill and paste it into any AI assistant:
+
+- **ChatGPT**: Paste into Personalization > Custom Instructions
+- **Claude**: Add to a Project's instructions
+- **Cursor/Claude Code**: Save as a file in your project (`.cursorrules` or `.claude/skills/`)
+
+See the [Using Your Skill](/deploy/claude) section for platform-specific instructions.
+
+## Is my data stored?
+
+Yes. Generated skills are saved to a database so they can be displayed on share pages (`skillthis.ai/s/[id]`). This includes your original input text, the generated skill, and the grade.
+
+## Can I edit my skill after generation?
+
+Not in the app directly. Copy the generated skill using the copy button and modify it freely. The skill is plain markdown, so you can edit it in any text editor.
+
+## What AI models power SkillThis?
+
+SkillThis uses Anthropic's Claude models:
+- **Claude Sonnet** for skill generation and grading
+- **Claude Haiku** for the fast input assessment
+
+## Why did I get a low grade?
+
+Common reasons for low grades:
+- Your input was too vague (no specific methodology)
+- The generated skill uses first/second person in the description (-10 points)
+- No concrete examples with input/output pairs (-10 points)
+- Missing Quick Start section (-15 points)
+
+The best fix: try again with a more detailed input. See [Writing Great Inputs](/creating/writing-inputs).
+
+## Can I use skills with AI platforms other than ChatGPT, Claude, and Cursor?
+
+Yes. Skills are plain markdown text. You can paste them into any AI assistant that accepts custom instructions or system prompts. The YAML frontmatter is a standard format that any platform can parse.
+
+## Does the Chrome extension work on all websites?
+
+The extension works on most websites with text content. It may not work well on:
+- Pages with minimal text content
+- Single-page apps with dynamically loaded content
+- Pages behind authentication
+
+See the [Chrome Extension](/extension/install) section for details.
+
+## Can I generate more than one skill?
+
+Yes. There's no limit on the number of skills you can generate. Each generation is independent.
+
+## What happens when I click "Share"?
+
+Your skill gets a permanent URL (e.g., `skillthis.ai/s/abc123`). You can share this URL via Twitter, LinkedIn, email, or copy the link directly. Anyone with the link can view and copy your skill. See [Sharing Your Skills](/sharing) for details.

@@ -1,0 +1,48 @@
+---
+title: Installation
+description: Install the SkillThis Chrome extension
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+The SkillThis Chrome extension lets you generate skills directly from any webpage or selected text, without visiting skillthis.ai.
+
+## Install from Chrome Web Store
+
+1. Visit the [SkillThis extension on the Chrome Web Store](https://chromewebstore.google.com)
+2. Click **Add to Chrome**
+3. Confirm the permissions
+
+The extension icon will appear in your Chrome toolbar.
+
+## Permissions
+
+The extension requests the following permissions:
+
+| Permission | Why |
+|---|---|
+| **activeTab** | Access the current page content when you click "Convert to Skill" |
+| **contextMenus** | Add the "Generate Skill from Selection" right-click menu item |
+| **scripting** | Extract text content from webpages |
+| **notifications** | Show status notifications (errors, generation in progress) |
+
+<Aside>
+  The extension only accesses page content when you explicitly trigger it (clicking the button or using the right-click menu). It does not read pages in the background.
+</Aside>
+
+## What You Can Do
+
+| Feature | How | Details |
+|---|---|---|
+| **Convert a full page** | Click the extension icon | Extracts the main content and generates a skill |
+| **Convert selected text** | Highlight text, right-click, "Generate Skill from Selection" | Uses the selected text as input |
+
+## Visual Indicators
+
+When generating a skill, the extension shows:
+
+- **Spinner animation** on the toolbar icon
+- **Elapsed time badge** showing how many seconds the generation has been running
+- Both indicators clear automatically when generation completes
+
+The result opens in a new tab as a share page on skillthis.ai.

@@ -1,0 +1,73 @@
+---
+title: Cursor / IDE
+description: Deploy your skill to Cursor, Claude Code, or other AI-powered IDEs
+---
+
+import { Steps, Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+
+## Deploy to Your IDE
+
+<Steps>
+
+1. **Copy your skill** using the copy button on the SkillThis results page
+
+2. **Create the appropriate file in your project root**
+
+   <Tabs>
+     <TabItem label="Claude Code">
+       ```bash
+       mkdir -p .claude/skills/your-skill-name
+       ```
+       Create `.claude/skills/your-skill-name/SKILL.md` and paste your skill content.
+     </TabItem>
+     <TabItem label="Cursor">
+       Create `.cursorrules` in your project root and paste your skill content.
+     </TabItem>
+   </Tabs>
+
+3. **Start coding**
+
+   The AI will automatically use this context when working in your project.
+
+</Steps>
+
+## How It Works
+
+AI-powered IDEs load instruction files from your project directory. When you ask the AI for help, it reads these files and applies the methodology described in your skill.
+
+- **Claude Code** reads from `.claude/skills/` (one skill per directory)
+- **Cursor** reads from `.cursorrules` (single file)
+- **Other IDEs** typically support similar project-level instruction files
+
+<Aside type="tip">
+  For Claude Code, you can have multiple skills in separate directories under `.claude/skills/`. Each skill is activated based on its description and trigger phrases.
+</Aside>
+
+## IDE-Specific Tips
+
+### Claude Code
+
+Claude Code supports the full skill format including YAML frontmatter. The `name` and `description` fields help Claude decide when to apply each skill.
+
+```
+your-project/
+└── .claude/
+    └── skills/
+        ├── code-reviewer/
+        │   └── SKILL.md
+        └── api-designer/
+            └── SKILL.md
+```
+
+### Cursor
+
+Cursor reads `.cursorrules` as a single instruction file. If you have multiple skills, combine them into one file with clear section headers.
+
+```
+your-project/
+└── .cursorrules
+```
+
+## Learn More
+
+- [Claude Code Skills Documentation](https://docs.anthropic.com/en/docs/claude-code/skills) - Official reference for Claude Code skills

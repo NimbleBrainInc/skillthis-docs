@@ -1,0 +1,70 @@
+/*
+ * SkillThis theme customization
+ *
+ * Emerald green accent (#059669) mapped to Starlight's HSL accent system.
+ * Only override accent colors and font. Let Starlight handle contrast.
+ */
+
+:root {
+  /* Emerald green accent for dark mode */
+  --sl-color-accent-low: hsl(160, 84%, 16%);
+  --sl-color-accent: hsl(160, 84%, 39%);
+  --sl-color-accent-high: hsl(160, 60%, 70%);
+}
+
+:root[data-theme='light'] {
+  /* Emerald green accent for light mode - darker for readability */
+  --sl-color-accent-high: hsl(160, 84%, 22%);
+  --sl-color-accent: hsl(160, 84%, 30%);
+  --sl-color-accent-low: hsl(160, 76%, 92%);
+}
+
+/* Plus Jakarta Sans font */
+:root {
+  --sl-font: 'Plus Jakarta Sans', var(--sl-font-system);
+}
+
+/* "Try SkillThis" header button */
+.try-skillthis-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--sl-color-accent);
+  color: var(--sl-color-bg);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.try-skillthis-btn:hover {
+  background-color: var(--sl-color-accent-high);
+}
+
+:root[data-theme='light'] .try-skillthis-btn {
+  color: white;
+}
+
+:root[data-theme='light'] .try-skillthis-btn:hover {
+  background-color: var(--sl-color-accent-high);
+  color: white;
+}
+
+/* Grade badge utility classes for docs content */
+.grade-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.125rem 0.625rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.grade-a { background: #ecfdf5; color: #059669; border: 1px solid rgba(5, 150, 105, 0.25); }
+.grade-b { background: #f7fee7; color: #65a30d; border: 1px solid rgba(101, 163, 13, 0.25); }
+.grade-c { background: #fefce8; color: #ca8a04; border: 1px solid rgba(202, 138, 4, 0.25); }
+.grade-d { background: #fff7ed; color: #ea580c; border: 1px solid rgba(234, 88, 12, 0.25); }
+.grade-f { background: #fef2f2; color: #dc2626; border: 1px solid rgba(220, 38, 38, 0.25); }

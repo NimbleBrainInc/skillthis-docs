@@ -1,0 +1,185 @@
+---
+title: Examples
+description: Example skills at different grade levels showing what each tier looks like
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+These examples show what skills look like at different grade levels. Each includes the original input and the resulting skill (abbreviated for readability).
+
+## A-Grade Skill: Sales Engineer
+
+**Input:**
+```
+I'm a sales engineer who runs technical demos and POCs for
+enterprise SaaS deals. My approach: I never demo features, I demo
+outcomes. Before any call I research the prospect's tech stack,
+identify their likely pain points, and build a custom demo
+environment that mirrors their setup. During the call I ask
+discovery questions first, then show only the 3-4 features that
+solve THEIR problems. I always leave time for hands-on exploration.
+Post-demo I send a personalized follow-up with a Loom walkthrough
+of their specific use case.
+```
+
+**Generated skill (abbreviated):**
+
+```yaml
+---
+name: running-technical-demos
+description: Runs outcome-focused technical demos and POCs for enterprise SaaS deals. Use when preparing for a demo, building a custom demo environment, or following up after a technical presentation.
+---
+```
+
+```markdown
+## Quick Start
+
+Given a prospect meeting, prepare and deliver an outcome-focused demo:
+
+1. Research prospect's tech stack and likely pain points
+2. Build a custom demo environment mirroring their setup
+3. Open with discovery questions (5-10 min)
+4. Demo only 3-4 features solving their specific problems
+5. Leave 15 min for hands-on exploration
+6. Send Loom walkthrough within 24 hours
+
+## Workflow
+[Detailed 3-phase process: Discovery, Presentation, Follow-up]
+
+## Examples
+[2 concrete examples with specific prospect scenarios,
+ demo configurations, and follow-up content]
+
+## Best Practices
+[5 specific practices with rationale]
+
+## Common Pitfalls
+[4 concrete mistakes to avoid]
+```
+
+**Why it scored well:** Specific process, named tools (Loom), clear methodology ("demo outcomes not features"), concrete workflow phases, and enough detail for strong examples.
+
+---
+
+## B-Grade Skill: Program Manager
+
+**Input:**
+```
+Program manager focused on product launches. I coordinate
+engineering, design, marketing, and legal. I'm good at identifying
+dependencies early and keeping stakeholders aligned without
+endless meetings.
+```
+
+**Generated skill (abbreviated):**
+
+```yaml
+---
+name: managing-product-launches
+description: Coordinates cross-functional product launches across engineering, design, marketing, and legal teams. Use when planning launches, managing dependencies, or aligning stakeholders.
+---
+```
+
+```markdown
+## Quick Start
+
+For a product launch, create:
+1. RACI matrix for all stakeholders
+2. Dependency map across teams
+3. Launch checklist with owners and dates
+
+## Workflow
+[General process but lacks specific tools or frameworks]
+
+## Examples
+[Examples present but somewhat abstract, missing specific
+ inputs/outputs]
+
+## Best Practices
+[Reasonable advice but generic]
+```
+
+**Why it scored B:** Has a clear process and structure, but the input lacked named frameworks and specific tools. The generated examples ended up being more abstract than concrete because there wasn't enough detail to model specific scenarios.
+
+---
+
+## C-Grade Skill: Data Analyst
+
+**Input:**
+```
+data analyst. sql, python, looker. i answer business questions
+and build dashboards. hate vanity metrics.
+```
+
+**Generated skill (abbreviated):**
+
+```yaml
+---
+name: analyzing-business-data
+description: Analyzes business data using SQL, Python, and Looker to answer questions and build dashboards. Use when exploring data, building reports, or investigating metrics.
+---
+```
+
+```markdown
+## Quick Start
+
+Given a business question:
+1. Clarify the actual question behind the request
+2. Identify relevant data sources
+3. Explore data quality
+4. Build analysis
+5. Present findings
+
+## Workflow
+[Very general workflow without specific techniques]
+
+## Examples
+[Vague examples without concrete SQL queries or
+ specific business scenarios]
+```
+
+**Why it scored C:** The input listed tools but no methodology. "I answer business questions" doesn't describe how. Without knowing the analyst's specific process, the generated skill fell back to generic data analysis advice.
+
+---
+
+## F-Grade Skill: Edge Case
+
+**Input:**
+```
+i do stuff with computers
+```
+
+**Generated skill:**
+
+```yaml
+---
+name: working-with-computers
+description: General computer operations and tasks. Use when working with computers or technology.
+---
+```
+
+```markdown
+## Quick Start
+
+Determine the type of computer task needed and apply
+the appropriate approach.
+```
+
+**Why it scored F:** The input provides no methodology, no tools, no process. The generated skill is essentially a placeholder with no actionable content. The description is vague and the quick start is generic to the point of being useless.
+
+<Aside>
+  The F-grade skill demonstrates an important point: SkillThis can only extract what you put in. Garbage in, garbage out. Even the AI's self-critique loop can't save an input with no methodology to extract.
+</Aside>
+
+---
+
+## Key Takeaways
+
+| Grade | Input Quality | Skill Result |
+|---|---|---|
+| A | Specific process, named tools, real examples, decision criteria | Production-ready, actionable throughout |
+| B | Clear role with some process, but missing tools or examples | Good structure, gaps in specificity |
+| C | Lists capabilities without explaining how | Generic advice dressed up in skill format |
+| F | No methodology whatsoever | Placeholder, not usable |
+
+The single biggest factor in your grade is the **specificity of your input**. Name your tools, describe your steps, walk through a real example.

@@ -1,0 +1,50 @@
+---
+title: Claude
+description: Deploy your skill to Claude Projects
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+
+## Deploy to Claude Projects
+
+<Steps>
+
+1. **Copy your skill** using the copy button on the SkillThis results page
+
+2. **Start a new Project in Claude** at [claude.ai](https://claude.ai)
+
+3. **Add the skill to Project Instructions**
+
+   Open your project settings and paste the full skill content into the Project Instructions field.
+
+4. **Start chatting with your enhanced Claude**
+
+   Claude will now apply your skill's methodology when relevant to the conversation.
+
+</Steps>
+
+<Aside type="tip">
+  Start your message with "Using [skill-name]..." to explicitly invoke the skill. For example: "Using recruiting-engineering-talent, screen this candidate profile."
+</Aside>
+
+## Claude Code (IDE)
+
+If you're using Claude Code, you can install skills directly into your project:
+
+```bash
+mkdir -p .claude/skills/your-skill-name
+```
+
+Paste your skill content into `.claude/skills/your-skill-name/SKILL.md`.
+
+Claude Code automatically loads skills from the `.claude/skills/` directory when it starts. The skill's description and trigger phrases tell Claude when to apply it.
+
+## How Claude Uses Skills
+
+When you add a skill to Claude:
+
+- The **description** helps Claude identify when the skill is relevant
+- The **Quick Start** gives Claude the immediate approach to follow
+- The **Workflow** provides the step-by-step process
+- The **Examples** show Claude what good output looks like
+- Claude applies the skill's methodology instead of giving generic responses
