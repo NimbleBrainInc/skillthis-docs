@@ -1,0 +1,24 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "local>NimbleBrainInc/renovate-config"
+  ],
+  "description": "A Starlight docs site, deployed by every merge to main, so each Renovate PR is a deploy. Managers: npm (package.json and package-lock.json) and GitHub Actions. Node 20 is set in the deploy workflow's setup-node, outside Renovate's scope, so no Node manager is on. Lock-file refreshes stay off (the shared default): npm cannot hold a refresh to the 14-day wait.",
+  "enabledManagers": [
+    "npm",
+    "github-actions"
+  ],
+  "packageRules": [
+    {
+      "description": "One weekly PR for the non-major npm updates, so a site gets at most one routine deploy a week from Renovate.",
+      "matchManagers": [
+        "npm"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "site dependencies"
+    }
+  ]
+}
