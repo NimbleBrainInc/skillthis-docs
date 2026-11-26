@@ -16,6 +16,7 @@ Documentation site for [SkillThis](https://skillthis.ai), the free tool that tra
 - **[Skill Format](https://docs.skillthis.ai/format/anatomy/)** - Anatomy of a generated skill (frontmatter, sections, grading)
 - **[Using Your Skill](https://docs.skillthis.ai/deploy/claude/)** - Deploy to Claude, ChatGPT, Cursor, and other AI platforms
 - **[Chrome Extension](https://docs.skillthis.ai/extension/install/)** - Generate skills from any webpage
+- **[MCP Server](https://docs.skillthis.ai/mcp/connect/)** - Connect Claude, ChatGPT, or Cursor to lint, grade, and publish skills
 - **[Sharing](https://docs.skillthis.ai/sharing/)** - Share your skills with permanent URLs
 - **[FAQ](https://docs.skillthis.ai/reference/faq/)** - Common questions and best practices
 

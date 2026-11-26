@@ -1,0 +1,57 @@
+---
+title: Tools and limits
+description: What the SkillThis MCP server can do, the daily allowance, how publishing works, and what data it receives.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+## Tools
+
+| Tool | What it does |
+|---|---|
+| `skillthis_lint_skill` | Checks a SKILL.md against the rules code can decide exactly: frontmatter, a kebab-case `name`, a third-person `description` that says when to use the skill, a quick start, length, and reference depth. It also scans for secrets such as API keys. Free and instant. |
+| `skillthis_grade_skill` | Grades a SKILL.md on the [SkillThis rubric](/format/grading-criteria/): a score, a letter, a percentile against other skills graded on SkillThis, and specific suggestions. |
+| `skillthis_publish_skill` | Publishes a skill on skillthis.ai under your account, with a link and a one-line install command. |
+| `skillthis_get_skill` | Fetches a skill someone shared on skillthis.ai, by its link or ID. |
+
+## Daily limits
+
+Each account gets, per day:
+
+| Tool | Per day |
+|---|---|
+| Lint | 100 |
+| Grade | 5 |
+| Publish | 3 |
+| Get | 50 |
+
+Grading text that is unchanged since its last grade returns the earlier grade and does not
+count. When you reach a limit, the assistant tells you when it resets.
+
+## Publishing
+
+Publishing makes a skill public, so the assistant asks you first:
+
+1. It shows a preview: the skill's name, its grade, and that it will be public.
+2. It publishes only if you confirm. The confirmation is good for ten minutes and for that
+   exact text.
+
+A skill can be published only if it passes lint (no failed required rule, no secret) and
+grades **B- or better**. A published skill stays public; to remove one, email
+[privacy@skillthis.ai](mailto:privacy@skillthis.ai).
+
+## Skills shared by others
+
+`skillthis_get_skill` returns skills other people wrote, marked as third-party. A skill is
+a set of instructions for an AI assistant, so read it before you save or use it.
+
+## Your data
+
+The assistant sends SkillThis only what a request needs: the skill text you ask it to
+check, grade, or publish, or the link of a skill to fetch. SkillThis does not receive
+your conversation. Grading sends the text to Anthropic, and the grade is kept for 30 days.
+The [privacy policy](https://skillthis.ai/privacy) has the details.
+
+<Aside>
+  Questions or problems: [skillthis.ai/help](https://skillthis.ai/help).
+</Aside>
