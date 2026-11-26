@@ -59,6 +59,13 @@ export default defineConfig({
           ],
         },
         {
+          label: 'MCP Server',
+          items: [
+            { label: 'Connect an AI Assistant', slug: 'mcp/connect' },
+            { label: 'Tools and Limits', slug: 'mcp/tools' },
+          ],
+        },
+        {
           label: 'Sharing',
           items: [
             { label: 'Sharing Your Skills', slug: 'sharing' },

@@ -1,0 +1,67 @@
+---
+title: Connect an AI assistant
+description: Connect Claude, ChatGPT, Cursor, or any MCP client to SkillThis, then lint, grade, and publish skills from your assistant.
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+
+SkillThis is also an MCP server. Connect it to your AI assistant, and the assistant can
+check, grade, and publish the skills you write together, without leaving the
+conversation.
+
+**Server URL:** `https://mcp.skillthis.ai/mcp`
+
+You sign in with your SkillThis account the first time you connect. A free account works;
+see [Tools and limits](/mcp/tools/) for the daily allowance.
+
+## Claude
+
+<Steps>
+
+1. In Claude (web or desktop), open **Settings → Connectors** and add a custom connector.
+
+2. Paste the server URL, `https://mcp.skillthis.ai/mcp`, and save.
+
+3. Choose **Connect**, and sign in to SkillThis in the window that opens.
+
+</Steps>
+
+## Claude Code
+
+```bash
+claude mcp add --transport http skillthis https://mcp.skillthis.ai/mcp
+```
+
+Then run `/mcp`, choose `skillthis`, and sign in. Add `--scope user` to make it available
+in every project.
+
+## ChatGPT
+
+Add a custom MCP connector with the server URL, `https://mcp.skillthis.ai/mcp`, and sign in
+when ChatGPT asks.
+
+## Cursor and other MCP clients
+
+Any client that supports remote MCP servers over streamable HTTP with OAuth can connect.
+In Cursor, add it to `mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "skillthis": { "url": "https://mcp.skillthis.ai/mcp" }
+  }
+}
+```
+
+## Try it
+
+Once connected, ask your assistant:
+
+- "Turn my code review process into a skill: I check tests first, then scope, then naming."
+- "Lint and grade the SKILL.md in this folder, and tell me what to fix first."
+- "Get the skill at skillthis.ai/s/TBMaMcgS2K and show me what it does."
+
+<Aside type="tip">
+  The server also gives your assistant a SkillThis skill describing the whole workflow, and
+  a "Draft a skill from your expertise" prompt your client may list as a command.
+</Aside>
